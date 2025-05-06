@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA na Saúde - Caso de Uso Detalhado</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#3B82F6',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=A%2520modern%2520healthcare%2520facility%2520with%2520advanced%2520AI%2520technology%2520being%2520used%2520by%2520medical%2520professionals.%2520The%2520image%2520shows%2520doctors%2520analyzing%2520medical%2520scans%2520on%2520digital%2520displays%2520with%2520AI%2520diagnostics%2520overlays.%2520The%2520scene%2520has%2520a%2520clean%252C%2520high-tech%2520medical%2520environment%2520with%2520blue%2520and%2520teal%2520accent%2520lighting%2520that%2520creates%2520a%2520futuristic%2520yet%2520professional%2520atmosphere&width=1920&height=600&seq=9876&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        input[type="email"]:focus, input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #3B82F6;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="w-full bg-slate-900/80 backdrop-blur-md fixed top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="c:/site/index.html" data-readdy="true" class="flex items-center text-white hover:text-primary transition-colors mr-4">
+                    <i class="ri-arrow-left-line mr-2"></i>
+                    <span>Voltar</span>
+                </a>
+                <a href="#" class="text-2xl font-['Pacifico'] text-white hidden md:block">logo</a>
+            </div>
+            
+            <div class="text-center hidden md:block">
+                <h1 class="text-xl font-semibold text-white">IA na Saúde: Transformando o Diagnóstico Médico</h1>
+            </div>
+            
+            <div class="flex items-center">
+                <button class="bg-slate-800/60 text-white px-4 py-2 !rounded-button font-medium hover:bg-slate-700/60 transition-colors whitespace-nowrap flex items-center">
+                    <i class="ri-share-line mr-2"></i>
+                    Compartilhar
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section w-full min-h-[600px] flex items-center pt-20">
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-3xl bg-slate-900/80 backdrop-blur-md p-8 rounded-lg">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">IA na Saúde: Revolucionando o Diagnóstico Médico</h1>
+                <p class="text-xl text-slate-300 mb-8">Nossa tecnologia de inteligência artificial está transformando a forma como os médicos diagnosticam e tratam doenças, melhorando a precisão e salvando vidas.</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-slate-800/80 p-4 rounded-lg text-center">
+                        <p class="text-3xl font-bold text-primary">98%</p>
+                        <p class="text-sm text-slate-400">Precisão diagnóstica</p>
+                    </div>
+                    <div class="bg-slate-800/80 p-4 rounded-lg text-center">
+                        <p class="text-3xl font-bold text-primary">75%</p>
+                        <p class="text-sm text-slate-400">Redução no tempo</p>
+                    </div>
+                    <div class="bg-slate-800/80 p-4 rounded-lg text-center">
+                        <p class="text-3xl font-bold text-primary">250+</p>
+                        <p class="text-sm text-slate-400">Hospitais atendidos</p>
+                    </div>
+                    <div class="bg-slate-800/80 p-4 rounded-lg text-center">
+                        <p class="text-3xl font-bold text-primary">45%</p>
+                        <p class="text-sm text-slate-400">Redução de custos</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">
+                        Solicitar Demonstração
+                    </button>
+                    <button class="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-3 !rounded-button font-medium hover:bg-white/20 transition-colors whitespace-nowrap flex items-center justify-center">
+                        <i class="ri-play-circle-line mr-2 ri-lg"></i>
+                        Ver Vídeo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Descrição Detalhada Section -->
+    <section class="bg-slate-800 py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-2/3">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">O Desafio no Diagnóstico Médico</h2>
+                    <p class="text-slate-300 mb-6">O diagnóstico médico preciso e rápido é um dos maiores desafios enfrentados pelos profissionais de saúde. Médicos frequentemente precisam analisar grandes volumes de dados, incluindo exames de imagem, resultados laboratoriais e históricos médicos complexos, para tomar decisões críticas em tempo limitado.</p>
+                    
+                    <div class="bg-slate-700 p-6 rounded-lg mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Principais Desafios Enfrentados:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 text-primary">
+                                    <i class="ri-error-warning-line"></i>
+                                </div>
+                                <p class="text-slate-300">Análise manual de exames de imagem (raio-X, tomografia, ressonância) é demorada e sujeita a erros humanos</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 text-primary">
+                                    <i class="ri-error-warning-line"></i>
+                                </div>
+                                <p class="text-slate-300">Dificuldade em identificar padrões sutis que podem indicar doenças em estágio inicial</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 text-primary">
+                                    <i class="ri-error-warning-line"></i>
+                                </div>
+                                <p class="text-slate-300">Tempo limitado para análise detalhada em ambientes de alta demanda</p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 text-primary">
+                                    <i class="ri-error-warning-line"></i>
+                                </div>
+                                <p class="text-slate-300">Escassez de especialistas em determinadas áreas médicas, especialmente em regiões remotas</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <p class="text-slate-300 mb-6">Estes desafios resultam em diagnósticos tardios, tratamentos inadequados e, em alguns casos, consequências graves para os pacientes. A necessidade de uma solução que pudesse aumentar a precisão diagnóstica e reduzir o tempo de análise tornou-se crítica para o avanço da medicina moderna.</p>
+                    
+                    <div class="bg-slate-700 p-6 rounded-lg">
+                        <blockquote class="border-l-4 border-primary pl-4 italic text-slate-300">
+                            "Antes da implementação do sistema de IA, nossos radiologistas passavam horas analisando exames complexos. Agora, com a assistência da inteligência artificial, conseguimos identificar anomalias com maior precisão e em uma fração do tempo anterior."
+                            <footer class="mt-2 text-sm text-slate-400 not-italic">
+                                — Dra. Mariana Costa, Diretora Clínica do Hospital São Lucas
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/3">
+                    <div class="bg-slate-700 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-semibold mb-4">Objetivos Alcançados</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 bg-primary/20 rounded-full text-primary">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Aumento da precisão diagnóstica</p>
+                                    <p class="text-sm text-slate-400">De 82% para 98% em casos de detecção precoce</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 bg-primary/20 rounded-full text-primary">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Redução no tempo de análise</p>
+                                    <p class="text-sm text-slate-400">75% mais rápido que métodos tradicionais</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 bg-primary/20 rounded-full text-primary">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Democratização do acesso</p>
+                                    <p class="text-sm text-slate-400">Diagnósticos especializados disponíveis em regiões remotas</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 bg-primary/20 rounded-full text-primary">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Redução de custos operacionais</p>
+                                    <p class="text-sm text-slate-400">Economia de 45% nos custos de diagnóstico por imagem</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 flex items-center justify-center mr-3 mt-1 bg-primary/20 rounded-full text-primary">
+                                    <i class="ri-check-line"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Integração com sistemas existentes</p>
+                                    <p class="text-sm text-slate-400">Compatível com 95% dos sistemas PACS hospitalares</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-slate-700 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Impacto em Números</h3>
+                        <div id="impactChart" class="w-full h-64"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solução Implementada Section -->
+    <section class="bg-slate-900 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossa Solução de IA para Diagnóstico Médico</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">Desenvolvemos uma plataforma avançada de inteligência artificial que analisa exames médicos e auxilia profissionais de saúde a realizar diagnósticos mais precisos e eficientes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Recurso 1 -->
+                <div class="bg-slate-800 p-8 rounded-lg hover:bg-slate-700 transition-colors group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                        <i class="ri-eye-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Visão Computacional Avançada</h3>
+                    <p class="text-slate-300">Nosso sistema utiliza redes neurais convolucionais (CNN) de última geração para analisar exames de imagem como raio-X, tomografias e ressonâncias magnéticas, identificando anomalias com precisão superior a 98%.</p>
+                </div>
+                
+                <!-- Recurso 2 -->
+                <div class="bg-slate-800 p-8 rounded-lg hover:bg-slate-700 transition-colors group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                        <i class="ri-database-2-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Análise de Dados Clínicos</h3>
+                    <p class="text-slate-300">Integração com prontuários eletrônicos para correlacionar resultados de exames com histórico médico, medicamentos e sintomas, fornecendo uma visão holística do paciente para diagnósticos mais contextualizados.</p>
+                </div>
+                
+                <!-- Recurso 3 -->
+                <div class="bg-slate-800 p-8 rounded-lg hover:bg-slate-700 transition-colors group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                        <i class="ri-line-chart-line ri-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Predição e Prognóstico</h3>
+                    <p class="text-slate-300">Algoritmos preditivos que não apenas identificam condições atuais, mas também estimam riscos futuros e sugerem planos de acompanhamento personalizados com base em milhões de casos analisados.</p>
+                </div>
+            </div>
+            
+            <div class="bg-slate-800 rounded-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Processo de Implementação</h3>
+                        <p class="text-slate-300 mb-6">Nossa solução foi implementada em mais de 250 hospitais e clínicas, seguindo um processo estruturado que garante integração perfeita com os sistemas existentes e adoção eficiente pelos profissionais de saúde.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mr-4 mt-1 text-primary">
+                                    <span class="font-bold">1</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Avaliação e Diagnóstico</h4>
+                                    <p class="text-sm text-slate-400">Análise completa da infraestrutura existente e necessidades específicas da instituição.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mr-4 mt-1 text-primary">
+                                    <span class="font-bold">2</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Integração de Sistemas</h4>
+                                    <p class="text-sm text-slate-400">Conexão com PACS, prontuários eletrônicos e outros sistemas hospitalares existentes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mr-4 mt-1 text-primary">
+                                    <span class="font-bold">3</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Treinamento Personalizado</h4>
+                                    <p class="text-sm text-slate-400">Capacitação da equipe médica e técnica para utilização eficiente da plataforma.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center mr-4 mt-1 text-primary">
+                                    <span class="font-bold">4</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Monitoramento e Otimização</h4>
+                                    <p class="text-sm text-slate-400">Acompanhamento contínuo de desempenho e ajustes para melhorar a precisão diagnóstica.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 bg-slate-700 p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Diferenciais Tecnológicos</h3>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300">Precisão Diagnóstica</span>
+                                <div class="w-32 h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 98%"></div>
+                                </div>
+                                <span class="text-primary font-medium">98%</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300">Velocidade de Processamento</span>
+                                <div class="w-32 h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 95%"></div>
+                                </div>
+                                <span class="text-primary font-medium">95%</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300">Integração com Sistemas</span>
+                                <div class="w-32 h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 92%"></div>
+                                </div>
+                                <span class="text-primary font-medium">92%</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-300">Facilidade de Uso</span>
+                                <div class="w-32 h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 90%"></div>
+                                </div>
+                                <span class="text-primary font-medium">90%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-800 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Certificações e Conformidade</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">ISO 13485</span>
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">ANVISA</span>
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">HIPAA</span>
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">GDPR</span>
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">FDA</span>
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">CE Mark</span>
+                                <span class="bg-slate-700 px-3 py-1 rounded-full text-xs">LGPD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados e Impacto Section -->
+    <section class="bg-slate-800 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Resultados e Impacto</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">A implementação de nossa solução de IA para diagnóstico médico gerou resultados significativos para instituições de saúde e, mais importante, para os pacientes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <div class="bg-slate-700 p-8 rounded-lg mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">Métricas de Desempenho</h3>
+                        <div id="metricsChart" class="w-full h-80"></div>
+                    </div>
+                    
+                    <div class="bg-slate-700 p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4">ROI e Benefícios Quantificados</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-medium">Redução de Custos Operacionais</h4>
+                                    <span class="text-primary font-bold">45%</span>
+                                </div>
+                                <p class="text-sm text-slate-400 mb-2">Economia anual média por instituição</p>
+                                <div class="w-full h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 45%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-medium">Aumento na Capacidade de Atendimento</h4>
+                                    <span class="text-primary font-bold">68%</span>
+                                </div>
+                                <p class="text-sm text-slate-400 mb-2">Mais pacientes atendidos com a mesma equipe</p>
+                                <div class="w-full h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 68%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-medium">Retorno sobre Investimento</h4>
+                                    <span class="text-primary font-bold">320%</span>
+                                </div>
+                                <p class="text-sm text-slate-400 mb-2">ROI médio em 24 meses</p>
+                                <div class="w-full h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="font-medium">Redução em Diagnósticos Incorretos</h4>
+                                    <span class="text-primary font-bold">82%</span>
+                                </div>
+                                <p class="text-sm text-slate-400 mb-2">Diminuição de falsos positivos e negativos</p>
+                                <div class="w-full h-2 bg-slate-600 rounded-full overflow-hidden">
+                                    <div class="h-full bg-primary" style="width: 82%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-slate-700 p-8 rounded-lg mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">Comparativo Antes/Depois</h3>
+                        <div id="compareChart" class="w-full h-80"></div>
+                    </div>
+                    
+                    <div class="bg-slate-700 p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-4">Impactos Qualitativos</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-heart-pulse-line ri-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Melhoria na Qualidade de Vida dos Pacientes</h4>
+                                    <p class="text-slate-300">Diagnósticos precoces permitiram tratamentos menos invasivos e recuperação mais rápida.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-user-smile-line ri-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Satisfação dos Profissionais de Saúde</h4>
+                                    <p class="text-slate-300">Redução da carga de trabalho repetitivo permitiu que médicos focassem em aspectos mais humanos do atendimento.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-global-line ri-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Democratização do Acesso à Saúde</h4>
+                                    <p class="text-slate-300">Instituições em regiões remotas agora têm acesso a diagnósticos de qualidade comparável a grandes centros médicos.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 flex items-center justify-center mr-4 mt-1">
+                                    <i class="ri-book-read-line ri-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Avanço na Pesquisa Médica</h4>
+                                    <p class="text-slate-300">Dados anônimos coletados contribuíram para novas descobertas e aprimoramento de protocolos de tratamento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="bg-slate-900 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">O Que Nossos Clientes Dizem</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">Conheça a experiência de profissionais e instituições que transformaram seus processos de diagnóstico com nossa solução de IA.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-slate-800 p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%2520headshot%2520of%2520a%2520female%2520doctor%2520in%2520her%252050s%2520with%2520short%2520grey%2520hair%2520and%2520glasses%252C%2520wearing%2520a%2520white%2520coat%2520and%2520stethoscope%252C%2520with%2520a%2520warm%2520smile%2520against%2520a%2520neutral%2520background&width=200&height=200&seq=1001&orientation=squarish" alt="Dra. Mariana Costa" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Dra. Mariana Costa</h4>
+                            <p class="text-sm text-slate-400">Diretora Clínica, Hospital São Lucas</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4">"A implementação da IA em nosso departamento de radiologia transformou completamente nosso fluxo de trabalho. Conseguimos reduzir o tempo de laudo de exames em 70% e aumentar nossa precisão diagnóstica para níveis que jamais imaginamos possíveis."</p>
+                    <div class="flex text-primary">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="bg-slate-800 p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%2520headshot%2520of%2520a%2520male%2520healthcare%2520executive%2520in%2520his%252040s%2520with%2520short%2520dark%2520hair%2520and%2520beard%252C%2520wearing%2520a%2520business%2520suit%2520with%2520blue%2520tie%252C%2520looking%2520confident%2520against%2520a%2520neutral%2520background&width=200&height=200&seq=1002&orientation=squarish" alt="Dr. Ricardo Mendes" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Dr. Ricardo Mendes</h4>
+                            <p class="text-sm text-slate-400">CEO, Rede Integrada de Saúde</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4">"O retorno sobre investimento superou todas as nossas expectativas. Além da economia operacional significativa, a qualidade do atendimento melhorou drasticamente, resultando em maior satisfação dos pacientes e reconhecimento no setor."</p>
+                    <div class="flex text-primary">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="bg-slate-800 p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://readdy.ai/api/search-image?query=Professional%2520headshot%2520of%2520a%2520female%2520radiologist%2520in%2520her%252030s%2520with%2520long%2520brown%2520hair%252C%2520wearing%2520a%2520blue%2520medical%2520scrubs%252C%2520looking%2520friendly%2520and%2520professional%2520against%2520a%2520neutral%2520background&width=200&height=200&seq=1003&orientation=squarish" alt="Dra. Camila Oliveira" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Dra. Camila Oliveira</h4>
+                            <p class="text-sm text-slate-400">Radiologista Chefe, Centro Diagnóstico Avançado</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4">"Como radiologista, posso afirmar que esta tecnologia é revolucionária. A capacidade de identificar padrões sutis em estágios iniciais de doenças nos permitiu salvar vidas que poderiam ter sido perdidas com métodos tradicionais de diagnóstico."</p>
+                    <div class="flex text-primary">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Casos Relacionados Section -->
+    <section class="bg-slate-800 py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Casos Relacionados</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto">Conheça outras aplicações de nossa tecnologia de IA em diferentes setores da saúde e além.</p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Caso 1 -->
+                <div class="bg-slate-700 rounded-lg overflow-hidden flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/3">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%2520pharmaceutical%2520laboratory%2520with%2520scientists%2520using%2520AI%2520technology%2520for%2520drug%2520discovery%252C%2520showing%2520researchers%2520in%2520lab%2520coats%2520working%2520with%2520digital%2520screens%2520displaying%2520molecular%2520structures%2520and%2520AI%2520analysis%2520in%2520a%2520high-tech%2520environment&width=600&height=400&seq=2001&orientation=landscape" alt="IA na Pesquisa Farmacêutica" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 w-full md:w-2/3">
+                        <h3 class="text-xl font-semibold mb-3">IA na Pesquisa Farmacêutica</h3>
+                        <p class="text-slate-300 mb-4">Nossa plataforma de IA está acelerando a descoberta de novos medicamentos, analisando milhões de compostos químicos e prevendo sua eficácia contra doenças específicas, reduzindo o tempo de desenvolvimento de fármacos em até 60%.</p>
+                        <button class="text-primary hover:text-primary/80 font-medium flex items-center transition-colors whitespace-nowrap">
+                            Saiba mais
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Caso 2 -->
+                <div class="bg-slate-700 rounded-lg overflow-hidden flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/3">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%2520telemedicine%2520setup%2520with%2520doctor%2520using%2520AI-powered%2520diagnostic%2520tools%2520during%2520a%2520video%2520consultation%252C%2520showing%2520medical%2520professional%2520with%2520digital%2520screens%2520displaying%2520patient%2520data%2520and%2520AI%2520analysis%2520in%2520a%2520professional%2520medical%2520office&width=600&height=400&seq=2002&orientation=landscape" alt="IA em Telemedicina" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 w-full md:w-2/3">
+                        <h3 class="text-xl font-semibold mb-3">IA em Telemedicina</h3>
+                        <p class="text-slate-300 mb-4">Transformamos consultas remotas com nossa tecnologia de IA que analisa em tempo real sintomas, expressões faciais e voz do paciente, auxiliando médicos a realizar diagnósticos precisos mesmo à distância.</p>
+                        <button class="text-primary hover:text-primary/80 font-medium flex items-center transition-colors whitespace-nowrap">
+                            Saiba mais
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Caso 3 -->
+                <div class="bg-slate-700 rounded-lg overflow-hidden flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/3">
+                        <img src="https://readdy.ai/api/search-image?query=Modern%2520surgical%2520room%2520with%2520robotic%2520surgery%2520equipment%2520and%2520AI%2520assistance%252C%2520showing%2520surgeons%2520operating%2520with%2520the%2520help%2520of%2520robotic%2520arms%2520and%2520digital%2520screens%2520displaying%2520real-time%2520AI%2520analysis%2520in%2520a%2520high-tech%2520operating%2520theater&width=600&height=400&seq=2003&orientation=landscape" alt="IA em Cirurgias Assistidas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 w-full md:w-2/3">
+                        <h3 class="text-xl font-semibold mb-3">IA em Cirurgias Assistidas</h3>
+                        <p class="text-slate-300 mb-4">Nossa solução de IA para cirurgias fornece orientação em tempo real, identificando estruturas anatômicas críticas e sugerindo abordagens otimizadas, resultando em procedimentos mais seguros e com recuperação mais rápida.</p>
+                        <button class="text-primary hover:text-primary/80 font-medium flex items-center transition-colors whitespace-nowrap">
+                            Saiba mais
+                            <i class="ri-arrow-right-line ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato Section -->
+    <section class="bg-slate-900 py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Transforme sua Instituição de Saúde</h2>
+                    <p class="text-slate-300 mb-8">Entre em contato para descobrir como nossa solução de IA para diagnóstico médico pode beneficiar sua instituição. Nossa equipe de especialistas está pronta para desenvolver uma implementação personalizada para suas necessidades específicas.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="ri-customer-service-2-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Suporte Especializado</h3>
+                                <p class="text-slate-400">Nossa equipe de especialistas em saúde e tecnologia oferece suporte completo durante todo o processo de implementação e uso.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="ri-settings-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Personalização Completa</h3>
+                                <p class="text-slate-400">Adaptamos nossa solução às necessidades específicas de sua instituição, integrando com seus sistemas existentes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center mr-4">
+                                <i class="ri-shield-check-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Segurança e Conformidade</h3>
+                                <p class="text-slate-400">Garantimos total conformidade com regulamentações de proteção de dados e segurança de informações médicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="font-semibold mb-4">Agende uma Demonstração Gratuita</h3>
+                        <p class="text-slate-300 mb-4">Veja nossa solução em ação com seus próprios dados. Agende uma demonstração personalizada com um de nossos especialistas.</p>
+                        <button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap w-full sm:w-auto">
+                            Agendar Demonstração
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-slate-800 p-8 rounded-lg">
+                        <h3 class="text-2xl font-semibold mb-6">Solicite Mais Informações</h3>
+                        
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Nome Completo</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 bg-slate-700 border-none rounded text-white placeholder-slate-400" placeholder="Seu nome">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-300 mb-2">E-mail Profissional</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 bg-slate-700 border-none rounded text-white placeholder-slate-400" placeholder="seu@email.com">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="institution" class="block text-sm font-medium text-slate-300 mb-2">Instituição</label>
+                                    <input type="text" id="institution" class="w-full px-4 py-3 bg-slate-700 border-none rounded text-white placeholder-slate-400" placeholder="Nome da instituição">
+                                </div>
+                                
+                                <div>
+                                    <label for="position" class="block text-sm font-medium text-slate-300 mb-2">Cargo</label>
+                                    <input type="text" id="position" class="w-full px-4 py-3 bg-slate-700 border-none rounded text-white placeholder-slate-400" placeholder="Seu cargo">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-slate-300 mb-2">Área de Interesse</label>
+                                <div class="relative">
+                                    <select id="interest" class="w-full px-4 py-3 bg-slate-700 border-none rounded text-white appearance-none pr-8">
+                                        <option value="" disabled selected>Selecione uma opção</option>
+                                        <option value="diagnostico">Diagnóstico por Imagem</option>
+                                        <option value="laboratorio">Análises Laboratoriais</option>
+                                        <option value="telemedicina">Telemedicina</option>
+                                        <option value="gestao">Gestão Hospitalar</option>
+                                        <option value="pesquisa">Pesquisa Clínica</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line text-slate-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Mensagem</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 bg-slate-700 border-none rounded text-white placeholder-slate-400" placeholder="Descreva suas necessidades ou perguntas"></textarea>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="privacy" type="checkbox" class="w-4 h-4 bg-slate-700 border-none rounded">
+                                </div>
+                                <label for="privacy" class="ml-2 text-sm text-slate-300">
+                                    Concordo com a <a href="#" class="text-primary hover:text-primary/80">Política de Privacidade</a> e autorizo o contato da equipe.
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap w-full">Enviar Solicitação</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Flutuante -->
+    <div class="fixed bottom-8 right-8 z-40">
+        <button class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-colors group">
+            <i class="ri-message-3-line ri-2x"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+                    <p class="text-slate-400 mb-4">Transformando a saúde através da inteligência artificial desde 2018.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-primary">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-primary">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://readdy.ai/home/a82fc644-c060-4d31-9e80-c69ea773b335/fb7e43bb-08bb-4732-8c90-057935bdfed3" data-readdy="true" class="text-slate-400 hover:text-primary">Página Inicial</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">Sobre Nós</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">Serviços</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Soluções</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-primary">IA na Saúde</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">IA em Finanças</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">IA na Indústria</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">IA em Educação</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary">IA em Varejo</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <span class="text-slate-400">Av. Paulista, 1000, São Paulo - SP</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <span class="text-slate-400">contato@iaempresa.com.br</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                                <i class="ri-phone-line text-primary"></i>
+                            </div>
+                            <span class="text-slate-400">+55 11 3456-7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-slate-400 text-sm mb-4 md:mb-0">© 2025 IA Empresa. Todos os direitos reservados.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-slate-400 hover:text-primary text-sm">Política de Privacidade</a>
+                        <a href="#" class="text-slate-400 hover:text-primary text-sm">Termos de Uso</a>
+                        <a href="#" class="text-slate-400 hover:text-primary text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gráfico de Impacto
+            const impactChart = echarts.init(document.getElementById('impactChart'));
+            const impactOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    data: ['Antes da IA', 'Com IA'],
+                    textStyle: {
+                        color: '#e2e8f0'
+                    }
+                },
+                grid: {
+                    left: '0',
+                    right: '0',
+                    bottom: '0',
+                    top: '40',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Diagnósticos/Dia', 'Tempo (min)', 'Precisão (%)'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#64748b'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#e2e8f0'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#64748b'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#e2e8f0'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#475569'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Antes da IA',
+                        type: 'bar',
+                        data: [45, 60, 82],
+                        itemStyle: {
+                            color: 'rgba(252, 141, 98, 1)'
+                        }
+                    },
+                    {
+                        name: 'Com IA',
+                        type: 'bar',
+                        data: [120, 15, 98],
+                        itemStyle: {
+                            color: 'rgba(87, 181, 231, 1)'
+                        }
+                    }
+                ]
+            };
+            impactChart.setOption(impactOption);
+            
+            // Gráfico de Métricas
+            const metricsChart = echarts.init(document.getElementById('metricsChart'));
+            const metricsOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    data: ['Precisão Diagnóstica', 'Tempo de Análise', 'Satisfação dos Médicos'],
+                    textStyle: {
+                        color: '#e2e8f0'
+                    }
+                },
+                grid: {
+                    left: '0',
+                    right: '0',
+                    bottom: '0',
+                    top: '40',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['Mês 1', 'Mês 2', 'Mês 3', 'Mês 4', 'Mês 5', 'Mês 6'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#64748b'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#e2e8f0'
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#64748b'
+                        }
+                    },
+                    axisLabel: {
+                        color: '#e2e8f0'
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#475569'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Precisão Diagnóstica',
+                        type: 'line',
+                        smooth: true,
+                        data: [85, 89, 92, 94, 96, 98],
+                        itemStyle: {
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+                                }, {
+                                    offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+                                }]
+                            }
+                        },
+                        showSymbol: false
+                    },
+                    {
+                        name: 'Tempo de Análise',
+                        type: 'line',
+                        smooth: true,
+                        data: [60, 50, 40, 30, 25, 15],
+                        itemStyle: {
+                            color: 'rgba(141, 211, 199, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+                                }, {
+                                    offset: 1, color: 'rgba(141, 211, 199, 0.05)'
+                                }]
+                            }
+                        },
+                        showSymbol: false
+                    },
+                    {
+                        name: 'Satisfação dos Médicos',
+                        type: 'line',
+                        smooth: true,
+                        data: [70, 75, 82, 88, 92, 96],
+                        itemStyle: {
+                            color: 'rgba(251, 191, 114, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: 'rgba(251, 191, 114, 0.2)'
+                                }, {
+                                    offset: 1, color: 'rgba(251, 191, 114, 0.05)'
+                                }]
+                            }
+                        },
+                        showSymbol: false
+                    }
+                ]
+            };
+            metricsChart.setOption(metricsOption);
+            
+            // Gráfico Comparativo
+            const compareChart = echarts.init(document.getElementById('compareChart'));
+            const compareOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'item',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                legend: {
+                    orient: 'vertical',
+                    right: 10,
+                    top: 'center',
+                    textStyle: {
+                        color: '#e2e8f0'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Antes da IA',
+                        type: 'pie',
+                        radius: ['20%', '40%'],
+                        center: ['30%', '50%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 8
+                        },
+                        label: {
+                            show: false
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '14',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 60, name: 'Diagnósticos Corretos', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                            { value: 25, name: 'Falsos Negativos', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+                            { value: 15, name: 'Falsos Positivos', itemStyle: { color: 'rgba(251, 191, 114, 1)' } }
+                        ]
+                    },
+                    {
+                        name: 'Com IA',
+                        type: 'pie',
+                        radius: ['20%', '40%'],
+                        center: ['70%', '50%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 8
+                        },
+                        label: {
+                            show: false
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '14',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 95, name: 'Diagnósticos Corretos', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                            { value: 3, name: 'Falsos Negativos', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+                            { value: 2, name: 'Falsos Positivos', itemStyle: { color: 'rgba(251, 191, 114, 1)' } }
+                        ]
+                    }
+                ]
+            };
+            compareChart.setOption(compareOption);
+            
+            // Responsividade dos gráficos
+            window.addEventListener('resize', function() {
+                impactChart.resize();
+                metricsChart.resize();
+                compareChart.resize();
+            });
+            
+            // Formulário
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Obrigado pelo seu interesse! Entraremos em contato em breve.');
+                    form.reset();
+                });
+            }
+            
+            // Checkbox personalizado
+            const checkbox = document.getElementById('privacy');
+            if (checkbox) {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        this.classList.add('bg-primary');
+                    } else {
+                        this.classList.remove('bg-primary');
+                    }
+                });
+            }
+            
+            // Botão de compartilhar
+            const shareButton = document.querySelector('.bg-slate-800\\/60');
+            if (shareButton) {
+                shareButton.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'IA na Saúde: Transformando o Diagnóstico Médico',
+                            text: 'Conheça como nossa tecnologia de IA está revolucionando o diagnóstico médico.',
+                            url: window.location.href
+                        });
+                    } else {
+                        alert('Compartilhamento não suportado neste navegador. Por favor, copie o link manualmente.');
+                    }
+                });
+            }
+            
+            // Botão de vídeo
+            const videoButton = document.querySelector('.bg-white\\/10');
+            if (videoButton) {
+                videoButton.addEventListener('click', function() {
+                    alert('O vídeo demonstrativo será aberto em breve.');
+                });
+            }
+            
+            // Botão flutuante
+            const floatingButton = document.querySelector('.fixed.bottom-8');
+            if (floatingButton) {
+                floatingButton.addEventListener('click', function() {
+                    alert('Um especialista entrará em contato com você em breve.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

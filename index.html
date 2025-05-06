@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inteligência Artificial - Transformando o Futuro</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#3B82F6',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: #0f172a;
+color: #e2e8f0;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=A%20futuristic%20AI%20technology%20scene%20with%20digital%20neural%20networks%20and%20glowing%20connections%20on%20the%20right%20side%2C%20with%20smooth%20gradient%20from%20dark%20blue%20to%20lighter%20blue%20on%20the%20left%20side%20for%20text%20placement.%20The%20image%20should%20have%20a%20modern%2C%20sleek%20aesthetic%20with%20abstract%20digital%20elements%20representing%20artificial%20intelligence%2C%20machine%20learning%2C%20and%20data%20visualization&width=1920&height=800&seq=1234&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+input[type="email"]:focus {
+outline: none;
+border-color: #3B82F6;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+</head>
+<body class="min-h-screen">
+<!-- Header -->
+<header class="w-full bg-slate-900/80 backdrop-blur-md fixed top-0 z-50">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<a href="#" class="text-2xl font-['Pacifico'] text-white">logo</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-white hover:text-primary transition-colors">Início</a>
+<a href="sobre.html" class="text-white hover:text-primary transition-colors">Sobre</a>
+<a href="#" class="text-white hover:text-primary transition-colors">Serviços</a>
+<a href="#" class="text-white hover:text-primary transition-colors">Blog</a>
+<a href="#" class="text-white hover:text-primary transition-colors">Contato</a>
+</nav>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Começar</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-[800px] flex items-center pt-20">
+<div class="container mx-auto px-4 py-20">
+<div class="max-w-2xl">
+<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Inteligência Artificial para um Futuro Melhor</h1>
+<p class="text-xl text-slate-300 mb-8">Transforme sua empresa com soluções de IA de última geração. Aumente a eficiência, reduza custos e impulsione a inovação com nossa plataforma inteligente.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Comece Agora</button>
+<button class="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-3 !rounded-button font-medium hover:bg-white/20 transition-colors whitespace-nowrap">Agende uma Demo</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="bg-slate-800 py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Recursos Principais</h2>
+<p class="text-slate-300 max-w-2xl mx-auto">Nossa plataforma de IA oferece recursos avançados para impulsionar sua empresa para o futuro digital.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Feature 1 -->
+<div class="bg-slate-700 p-8 rounded-lg hover:bg-slate-600 transition-colors group">
+<div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<i class="ri-brain-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Aprendizado de Máquina</h3>
+<p class="text-slate-300">Algoritmos avançados que aprendem com seus dados e melhoram continuamente para resultados cada vez mais precisos.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-slate-700 p-8 rounded-lg hover:bg-slate-600 transition-colors group">
+<div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<i class="ri-robot-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Automação Inteligente</h3>
+<p class="text-slate-300">Automatize processos complexos e repetitivos, liberando sua equipe para tarefas de maior valor estratégico.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-slate-700 p-8 rounded-lg hover:bg-slate-600 transition-colors group">
+<div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<i class="ri-chat-voice-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Processamento de Linguagem</h3>
+<p class="text-slate-300">Compreenda e analise textos, conversas e documentos com precisão incrível usando nossa tecnologia NLP.</p>
+</div>
+<!-- Feature 4 -->
+<div class="bg-slate-700 p-8 rounded-lg hover:bg-slate-600 transition-colors group">
+<div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+<i class="ri-eye-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Visão Computacional</h3>
+<p class="text-slate-300">Identifique objetos, pessoas e padrões em imagens e vídeos com nossa tecnologia de visão avançada.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="bg-slate-900 py-20">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%2C%20clean%20visualization%20of%20artificial%20intelligence%20technology%20with%20neural%20networks%2C%20digital%20connections%2C%20and%20data%20flows.%20The%20image%20should%20have%20a%20futuristic%20yet%20professional%20look%20with%20blue%20and%20purple%20color%20tones.%20It%20should%20represent%20the%20concept%20of%20machine%20learning%20and%20AI%20innovation%20in%20a%20corporate%20setting&width=600&height=500&seq=5678&orientation=landscape" alt="Sobre IA" class="rounded-lg w-full object-cover shadow-xl">
+</div>
+<div class="w-full lg:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Sobre Nossa Tecnologia de IA</h2>
+<p class="text-slate-300 mb-6">Nossa plataforma de inteligência artificial foi desenvolvida por especialistas com mais de 15 anos de experiência em machine learning e ciência de dados. Utilizamos as mais recentes inovações em IA para criar soluções que realmente fazem a diferença.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="text-slate-300">Tecnologia proprietária com 99,8% de precisão</p>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="text-slate-300">Processamento de dados 200x mais rápido que soluções tradicionais</p>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="text-slate-300">Compatível com mais de 50 sistemas e plataformas</p>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center mr-3 mt-1">
+<i class="ri-check-line text-primary"></i>
+</div>
+<p class="text-slate-300">Conformidade com LGPD e padrões internacionais de segurança</p>
+</li>
+</ul>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-8">
+<div class="text-center">
+<p class="text-3xl font-bold text-primary">98%</p>
+<p class="text-sm text-slate-400">Satisfação dos clientes</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-bold text-primary">500+</p>
+<p class="text-sm text-slate-400">Empresas atendidas</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-bold text-primary">15TB</p>
+<p class="text-sm text-slate-400">Dados processados/dia</p>
+</div>
+<div class="text-center">
+<p class="text-3xl font-bold text-primary">42%</p>
+<p class="text-sm text-slate-400">Redução de custos</p>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Saiba Mais</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Use Cases Section -->
+<section class="bg-slate-800 py-20">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Casos de Uso</h2>
+<p class="text-slate-300 max-w-2xl mx-auto">Descubra como nossa tecnologia de IA está transformando diferentes setores e criando valor real.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case 1 -->
+<div class="bg-slate-700 rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20healthcare%20facility%20with%20doctors%20using%20AI%20technology%20on%20tablets%20and%20screens%20to%20analyze%20medical%20data.%20The%20image%20should%20show%20medical%20professionals%20in%20a%20clean%2C%20high-tech%20environment%20with%20digital%20displays%20showing%20patient%20data%20and%20AI%20diagnostics&width=600&height=400&seq=1111&orientation=landscape" alt="IA na Saúde" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">IA na Saúde</h3>
+<p class="text-slate-300 mb-4">Nossa IA ajuda médicos a diagnosticar doenças com mais precisão e rapidez, analisando exames de imagem e históricos médicos para identificar padrões imperceptíveis ao olho humano.</p>
+<a href="Detalhes-do-Caso-de-Uso.html" class="text-primary hover:text-primary/80 font-medium flex items-center transition-colors whitespace-nowrap">
+Saiba mais
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case 2 -->
+<div class="bg-slate-700 rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20financial%20trading%20room%20with%20professionals%20using%20AI-powered%20analytics%20on%20multiple%20screens.%20The%20image%20should%20show%20a%20corporate%20finance%20environment%20with%20data%20visualizations%2C%20stock%20charts%2C%20and%20AI%20prediction%20models%20displayed%20on%20large%20monitors&width=600&height=400&seq=2222&orientation=landscape" alt="IA em Finanças" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">IA em Finanças</h3>
+<p class="text-slate-300 mb-4">Instituições financeiras utilizam nossa plataforma para detectar fraudes, otimizar investimentos e personalizar serviços bancários, reduzindo riscos e aumentando a rentabilidade.</p>
+<a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center transition-colors whitespace-nowrap">
+Saiba mais
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case 3 -->
+<div class="bg-slate-700 rounded-lg overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20manufacturing%20facility%20with%20robotic%20arms%20and%20AI-controlled%20production%20lines.%20The%20image%20should%20show%20an%20advanced%20factory%20floor%20with%20industrial%20robots%2C%20conveyor%20systems%2C%20and%20workers%20monitoring%20digital%20control%20panels%20with%20AI%20analytics&width=600&height=400&seq=3333&orientation=landscape" alt="IA na Indústria" class="w-full h-56 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">IA na Indústria</h3>
+<p class="text-slate-300 mb-4">Fábricas inteligentes utilizam nossa IA para manutenção preditiva, controle de qualidade automatizado e otimização de cadeias de produção, aumentando a eficiência operacional.</p>
+<a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center transition-colors whitespace-nowrap">
+Saiba mais
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="bg-gradient-to-r from-slate-900 to-slate-800 py-20">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Fique Atualizado</h2>
+<p class="text-slate-300 mb-8">Inscreva-se em nossa newsletter para receber as últimas novidades sobre IA e dicas exclusivas para sua empresa.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input type="email" placeholder="Seu melhor e-mail" class="flex-1 px-4 py-3 bg-slate-700 border-none rounded text-white placeholder-slate-400">
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Inscrever-se</button>
+</form>
+<div class="mt-12">
+<p class="text-slate-300 mb-4">Siga-nos nas redes sociais</p>
+<div class="flex justify-center gap-6">
+<a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors">
+<i class="ri-facebook-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors">
+<i class="ri-twitter-x-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors">
+<i class="ri-linkedin-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center hover:bg-slate-600 transition-colors">
+<i class="ri-instagram-fill text-white"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-900 pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+<p class="text-slate-400 mb-4">Transformando empresas através da inteligência artificial desde 2018.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-slate-400 hover:text-primary">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-slate-400 hover:text-primary">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="text-slate-400 hover:text-primary">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="text-slate-400 hover:text-primary">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-slate-400 hover:text-primary">Início</a></li>
+<li><a href="sobre.html" class="text-slate-400 hover:text-primary">Sobre Nós</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Serviços</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Blog</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Contato</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Serviços</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-slate-400 hover:text-primary">Consultoria em IA</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Desenvolvimento de Modelos</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Integração de Sistemas</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Treinamento e Capacitação</a></li>
+<li><a href="#" class="text-slate-400 hover:text-primary">Suporte Técnico</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contato</h3>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-slate-400">Av. Paulista, 1000, São Paulo - SP</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-slate-400">contato@iaempresa.com.br</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-slate-400">+55 11 3456-7890</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-slate-400 text-sm mb-4 md:mb-0">© 2025 IA Empresa. Todos os direitos reservados.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-slate-400 hover:text-primary text-sm">Política de Privacidade</a>
+<a href="#" class="text-slate-400 hover:text-primary text-sm">Termos de Uso</a>
+<a href="#" class="text-slate-400 hover:text-primary text-sm">Cookies</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const menuButton = document.querySelector('.md\\:hidden');
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'fixed inset-0 bg-slate-900 z-50 flex flex-col items-center justify-center transform translate-x-full transition-transform duration-300';
+mobileMenu.innerHTML = `
+<button class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-close-line ri-lg"></i>
+</button>
+<nav class="flex flex-col items-center space-y-6 text-xl">
+<a href="#" class="text-white hover:text-primary transition-colors">Início</a>
+<a href="sobre.html" class="text-white hover:text-primary transition-colors">Sobre</a>
+<a href="#" class="text-white hover:text-primary transition-colors">Serviços</a>
+<a href="#" class="text-white hover:text-primary transition-colors">Blog</a>
+<a href="#" class="text-white hover:text-primary transition-colors">Contato</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap mt-4">Começar</button>
+</nav>
+`;
+document.body.appendChild(mobileMenu);
+let menuOpen = false;
+menuButton.addEventListener('click', function() {
+if (!menuOpen) {
+mobileMenu.classList.remove('translate-x-full');
+mobileMenu.classList.add('translate-x-0');
+document.body.style.overflow = 'hidden';
+menuOpen = true;
+}
+});
+mobileMenu.querySelector('button').addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-0');
+mobileMenu.classList.add('translate-x-full');
+document.body.style.overflow = '';
+menuOpen = false;
+});
+// Scroll Animation
+const scrollElements = document.querySelectorAll('.hero-section, section');
+const elementInView = (el, scrollOffset = 100) => {
+const elementTop = el.getBoundingClientRect().top;
+return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) - scrollOffset);
+};
+const displayScrollElement = (element) => {
+element.style.opacity = "1";
+element.style.transform = "translateY(0)";
+};
+const hideScrollElement = (element) => {
+element.style.opacity = "0";
+element.style.transform = "translateY(20px)";
+};
+scrollElements.forEach((el) => {
+el.style.opacity = "0";
+el.style.transform = "translateY(20px)";
+el.style.transition = "all 0.6s ease-in-out";
+});
+const handleScrollAnimation = () => {
+scrollElements.forEach((el) => {
+if (elementInView(el, 100)) {
+displayScrollElement(el);
+}
+});
+};
+window.addEventListener('scroll', handleScrollAnimation);
+handleScrollAnimation();
+});
+</script>
+</body>
+</html>
